@@ -81,7 +81,7 @@ public class CommonRecyclerView extends RecyclerView {
             }
         });
 
-        addOnItemTouchListener(new OnItemTouchListener() {
+        addOnItemTouchListener(new SimpleOnItemTouchListener() {
             @Override
             public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
 
@@ -89,16 +89,6 @@ public class CommonRecyclerView extends RecyclerView {
                     return true;
                 }
                 return false;
-            }
-
-            @Override
-            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
-
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
             }
         });
 

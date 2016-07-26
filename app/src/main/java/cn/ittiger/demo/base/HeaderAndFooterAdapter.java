@@ -55,6 +55,18 @@ public abstract class HeaderAndFooterAdapter<T> extends RecyclerView.Adapter<Vie
         onBindItemViewHolder(holder, position, item);
     }
 
+    @Override
+    public final int getItemViewType(int position) {
+
+        if(isHeaderView(position)) {//FooterView
+            return mHeaderViews.keyAt(position);
+        }
+        if(isFooterView(position)){//HeaderView
+            return mFooterViews.keyAt(position - getHeaderViewCount() - getItemDataCount());
+        }
+        return getItemViewTypeForData(position);
+    }
+
     /**
      * 展示的总数据数(包括HeaderView和FooterView)
      *
@@ -131,18 +143,6 @@ public abstract class HeaderAndFooterAdapter<T> extends RecyclerView.Adapter<Vie
 
         mList = list;
         notifyDataSetChanged();
-    }
-
-    @Override
-    public final int getItemViewType(int position) {
-
-        if(isHeaderView(position)) {//FooterView
-            return mHeaderViews.keyAt(position);
-        }
-        if(isFooterView(position)){//HeaderView
-            return mFooterViews.keyAt(position - getHeaderViewCount() - getItemDataCount());
-        }
-        return getItemViewTypeForData(position);
     }
 
     /**
