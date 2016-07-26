@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListActivity">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+    <cn.ittiger.demo.base.CommonRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_below="@+id/container"
+        android:layout_width="match_parent"
+        android:padding="@dimen/d_10"
+        android:layout_height="wrap_content">
+    </cn.ittiger.demo.base.CommonRecyclerView>
+
+</RelativeLayout>
