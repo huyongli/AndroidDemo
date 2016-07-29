@@ -28,6 +28,8 @@ public class MainActivity extends ListActivity {
         List<String> list = new ArrayList<>(10);
         list.add("Retrofit");
         list.add("RecyclerView");
+        list.add("VideoList");
+        list.add("VideoActivity");
         return list;
     }
 
@@ -40,6 +42,12 @@ public class MainActivity extends ListActivity {
                 break;
             case 1://RecyclerView
                 startActivity(new Intent(this, RecyclerViewActivity.class));
+                break;
+            case 2://VideoList
+                startActivity(new Intent(this, VideoListActivity.class));
+                break;
+            case 3://VideoList
+                startActivity(new Intent(this, VideoActivity.class));
                 break;
         }
     }

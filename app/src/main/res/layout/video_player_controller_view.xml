@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/d_50">
+
+    <RelativeLayout
+        android:id="@+id/controller_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_50">
+
+        <ImageView
+            android:id="@+id/play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/d_15"
+            android:src="@drawable/ic_pause"/>
+
+        <ImageView
+            android:id="@+id/full_screen_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/d_10"
+            android:src="@drawable/ic_fullscreen"/>
+
+        <TextView
+            android:id="@+id/play_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/d_10"
+            android:layout_toRightOf="@+id/play_btn"
+            android:gravity="center_vertical"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/total_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/d_10"
+            android:layout_toLeftOf="@id/full_screen_btn"
+            android:gravity="center_vertical"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"/>
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/d_10"
+            android:layout_marginRight="@dimen/d_10"
+            android:layout_toLeftOf="@+id/total_time"
+            android:layout_toRightOf="@+id/play_time"
+            android:max="100"
+            android:maxHeight="@dimen/d_5"
+            android:minHeight="@dimen/d_5"
+            android:progress="0"/>
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/view_only_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:maxHeight="@dimen/d_5"
+        android:minHeight="@dimen/d_5"
+        android:progress="0"
+        android:visibility="gone"/>
+
+</merge>
