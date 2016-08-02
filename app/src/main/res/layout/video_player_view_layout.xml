@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/black">
 
-    <TextureView
-        android:id="@+id/video_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/d_240"
-        android:layout_centerInParent="true"/>
+        android:layout_height="@dimen/d_240">
+        <TextureView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_240"
+            android:layout_centerInParent="true"/>
 
-    <ImageView
-        android:id="@+id/video_image"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/d_240"
-        android:layout_centerInParent="true"
-        android:src="@drawable/bg"/>
+        <ImageView
+            android:id="@+id/video_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_240"
+            android:layout_centerInParent="true"
+            android:src="@drawable/bg"/>
 
-    <ImageView
-        android:id="@+id/play_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:src="@drawable/ic_play"/>
+        <ImageView
+            android:id="@+id/play_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_play"/>
 
-    <ProgressBar
-        android:id="@+id/video_loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"/>
+        <ProgressBar
+            android:id="@+id/video_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
 
-    <cn.ittiger.demo.ui.VideoPlayerControllerView
-        android:id="@+id/videoControllerView"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/d_50"
-        android:visibility="gone">
+        <cn.ittiger.demo.ui.VideoPlayerControllerView
+            android:id="@+id/videoControllerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_50"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone">
 
-    </cn.ittiger.demo.ui.VideoPlayerControllerView>
+        </cn.ittiger.demo.ui.VideoPlayerControllerView>
+    </RelativeLayout>
 </merge>
