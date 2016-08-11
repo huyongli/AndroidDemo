@@ -1,4 +1,4 @@
-package cn.ittiger.demo.ui;
+package cn.ittiger.demo.ui.video;
 
 import cn.ittiger.demo.R;
 
@@ -28,7 +28,7 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
     private View mControllerBar;
     private int mVideoDuration = 0;
     private VideoControlListener mControlListener;
-    private boolean mIsViewOnlySeekBarEnable = true;
+    private PlayScreenState mFullScreenState = PlayScreenState.NORMAL;
 
     public VideoPlayerControllerView(Context context) {
 
@@ -62,9 +62,7 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
                 if (fromUser) {
-                    if (mIsViewOnlySeekBarEnable) {
-                        mViewOnlyProgressBar.setProgress(progress);
-                    }
+                    mViewOnlyProgressBar.setProgress(progress);
                     int time = progress * mVideoDuration / 100 * 1000;
                     mControlListener.onProgressChanged(time);
                 }
@@ -87,7 +85,11 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
 
         switch (v.getId()) {
             case R.id.full_screen_btn:
-                mControlListener.fullScreen();
+                if(mFullScreenState == PlayScreenState.NORMAL) {
+                    mControlListener.fullScreen();
+                } else {
+                    mControlListener.exitFullScreen();
+                }
                 break;
         }
     }
@@ -103,28 +105,19 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
         mTotalTimeText.setText(formatVideoTimeLength(mVideoDuration));
     }
 
-    public void setIsViewOnlySeekBarEnable(boolean isViewOnlySeekBarEnable) {
-
-        mIsViewOnlySeekBarEnable = isViewOnlySeekBarEnable;
-    }
-
     public void setVideoPlayTime(int playTime) {
 
         playTime = playTime / 1000;
         mPlayTimeText.setText(formatVideoTimeLength(playTime));
         int progress = (int) (playTime * 1.0 / mVideoDuration * 100 + 0.5f);
         mSeekBar.setProgress(progress);
-        if(mIsViewOnlySeekBarEnable) {
-            mViewOnlyProgressBar.setProgress(progress);
-        }
+        mViewOnlyProgressBar.setProgress(progress);
     }
 
     public void setSecondaryProgress(int progress) {
 
         mSeekBar.setSecondaryProgress(progress);
-        if(mIsViewOnlySeekBarEnable) {
-            mViewOnlyProgressBar.setSecondaryProgress(progress);
-        }
+        mViewOnlyProgressBar.setSecondaryProgress(progress);
     }
 
     public boolean isShown() {
@@ -135,26 +128,30 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
     public void showOrHide() {
 
         if (mControllerBar.getVisibility() == View.VISIBLE) {
-            mControllerBar.clearAnimation();
-            Animation animation = AnimationUtils.loadAnimation(getContext(),
-                    R.anim.option_leave_from_bottom);
-            animation.setAnimationListener(new AnimationImp() {
-                @Override
-                public void onAnimationEnd(Animation animation) {
-
-                    super.onAnimationEnd(animation);
-                    mControllerBar.setVisibility(View.GONE);
-                    if(mIsViewOnlySeekBarEnable) {
-                        mViewOnlyProgressBar.setVisibility(VISIBLE);
-                    }
-                    mControlListener.onControllerHide();
-                }
-            });
-            mControllerBar.startAnimation(animation);
+            hide();
         } else {
             show();
             mControllerBar.postDelayed(mHideRunnable, HIDE_DELAY);
         }
+    }
+
+    private void hide() {
+
+        mControllerBar.removeCallbacks(mHideRunnable);
+        mControllerBar.clearAnimation();
+        Animation animation = AnimationUtils.loadAnimation(getContext(),
+                R.anim.option_leave_from_bottom);
+        animation.setAnimationListener(new AnimationImp() {
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+                super.onAnimationEnd(animation);
+                mControllerBar.setVisibility(View.GONE);
+                mViewOnlyProgressBar.setVisibility(VISIBLE);
+                mControlListener.onControllerHide();
+            }
+        });
+        mControllerBar.startAnimation(animation);
     }
 
     public void show() {
@@ -168,9 +165,7 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
 
                 super.onAnimationEnd(animation);
                 mControllerBar.setVisibility(View.VISIBLE);
-                if(mIsViewOnlySeekBarEnable) {
-                    mViewOnlyProgressBar.setVisibility(GONE);
-                }
+                mViewOnlyProgressBar.setVisibility(GONE);
                 mControlListener.onControllerShow();
             }
         });
@@ -181,9 +176,20 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
     private Runnable mHideRunnable = new Runnable() {
         @Override
         public void run() {
+
             showOrHide();
         }
     };
+
+    public void onDestroy() {
+
+        setVisibility(GONE);
+        hide();
+        mControllerBar.removeCallbacks(mHideRunnable);
+        setSecondaryProgress(0);
+        setVideoDuration(0);
+        setVideoPlayTime(0);
+    }
 
     public static class AnimationImp implements Animation.AnimationListener {
 
@@ -239,9 +245,16 @@ public class VideoPlayerControllerView extends RelativeLayout implements View.On
 
         void fullScreen();
 
+        void exitFullScreen();
+
         void onControllerShow();
 
         void onControllerHide();
+    }
+
+    public void setPlayScreenState(PlayScreenState state) {
+
+        mFullScreenState = state;
     }
 }
 

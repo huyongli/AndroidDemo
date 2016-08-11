@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context="cn.ittiger.demo.VideoActivity">
 
-    <cn.ittiger.demo.ui.VideoPlayerView
+    <cn.ittiger.demo.ui.video.VideoPlayerView
         android:id="@+id/videoPlayerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/black">
 
-    </cn.ittiger.demo.ui.VideoPlayerView>
+    </cn.ittiger.demo.ui.video.VideoPlayerView>
 
     <!--<Button
         android:id="@+id/btnPlay"

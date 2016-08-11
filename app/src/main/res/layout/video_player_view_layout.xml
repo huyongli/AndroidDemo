@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/black">
+    android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/video_player_view_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/d_240">
-        <TextureView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/d_240"
-            android:layout_centerInParent="true"/>
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
 
         <ImageView
             android:id="@+id/video_image"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/d_240"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
+            android:scaleType="fitXY"
             android:src="@drawable/bg"/>
 
         <ImageView
@@ -34,13 +31,13 @@
             android:layout_centerInParent="true"
             android:visibility="gone"/>
 
-        <cn.ittiger.demo.ui.VideoPlayerControllerView
+        <cn.ittiger.demo.ui.video.VideoPlayerControllerView
             android:id="@+id/videoControllerView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/d_50"
             android:layout_alignParentBottom="true"
             android:visibility="gone">
 
-        </cn.ittiger.demo.ui.VideoPlayerControllerView>
+        </cn.ittiger.demo.ui.video.VideoPlayerControllerView>
     </RelativeLayout>
 </merge>

@@ -28,4 +28,5 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.github.danylovolokh:video-player-manager:0.2.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
 }
