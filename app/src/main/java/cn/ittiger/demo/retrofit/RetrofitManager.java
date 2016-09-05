@@ -90,7 +90,7 @@ public class RetrofitManager {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .client(clientBuilder.build())
-//                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
             RetrofitService service = retrofit.create(RetrofitService.class);
@@ -171,8 +171,8 @@ public class RetrofitManager {
     }
 
     public void uploadFile(final Activity activity, final Handler handler) {
-        String file1 = "/storage/sdcard1/hxq百天照/img_5177.jpg";
-        String file2 = "/storage/sdcard1/hxq百天照/016.jpg";
+        String file1 = "/storage/sdcard0/049.jpg";
+        String file2 = "/storage/sdcard0/057.jpg";
 
         File file = new File(file1);
         if(!file.exists()) {
@@ -206,14 +206,18 @@ public class RetrofitManager {
             }
         };
 
-        RequestBody body1 = RequestBody.create(MediaType.parse("multipart/form-data"), new File(file1));
+//        RequestBody body1 = RequestBody.create(MediaType.parse("multipart/form-data"), new File(file1));
 //        RequestBody body2 = RequestBody.create(MediaType.parse("multipart/form-data"), new File(file2));
 
-        Map<String, RequestBody> map = new HashMap<>();
-        map.put("file\"; filename=\"img_5177.jpg", new FileRequestBody<>(body1, callback));
+//        Map<String, RequestBody> map = new HashMap<>();
+//        map.put("file\"; filename=\"img_5177.jpg", new FileRequestBody<>(body1, callback));
 //        map.put("file\"; filename=\"016.jpg", new FileRequestBody<>(body2, callback));
+//        Call<User> call = getModelRetrofitService().uploadFile(map);
 
-        Call<User> call = getModelRetrofitService().uploadFile(map);
+        RequestBody body1 = RequestBody.create(MediaType.parse("application/otcet-stream"), file);
+        FileRequestBody body = new FileRequestBody(body1, callback);
+        MultipartBody.Part part = MultipartBody.Part.createFormData("file", file.getName(), body);
+        Call<User> call = getModelRetrofitService().uploadOneFile(part);
         call.enqueue(callback);
     }
 
