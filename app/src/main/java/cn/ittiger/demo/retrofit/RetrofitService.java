@@ -33,11 +33,16 @@ public interface RetrofitService {
     Call<User> getModelServiceAsync(@Query("async") boolean async);
 
     @GET("{path}")
-    Call<String> getStringServiceAsync(@Path("path") String path, @Query("string") boolean isString, @Query("async") boolean async);
+    Call<String> getStringServiceAsync(@Path("path") String path, @Query("string") boolean isString,
+                                       @Query("async") boolean async);
 
     @Multipart
     @POST("fileService")
     Call<User> uploadFile(@PartMap Map<String, RequestBody> requestBodyMap);
+
+    @Multipart
+    @POST("fileService")
+    Call<User> uploadOneFile(@Part MultipartBody.Part file);
 
     @FormUrlEncoded
     @POST("postService")

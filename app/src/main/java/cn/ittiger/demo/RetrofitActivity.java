@@ -36,6 +36,7 @@ public class RetrofitActivity extends ListActivity {
         mTextViewPercent = (TextView) findViewById(R.id.tv_percent);
         mTextViewProgress = (TextView) findViewById(R.id.tv_progress);
         mImageView = (ImageView) findViewById(R.id.image);
+        mProgressBar.setProgress(0);
     }
 
     @Override
@@ -70,6 +71,7 @@ public class RetrofitActivity extends ListActivity {
                 break;
             case 2:
                 mProgressLayout.setVisibility(View.GONE);
+                mProgressBar.setProgress(0);
                 break;
             case 3:
                 String path = msg.getData().getString("file");
