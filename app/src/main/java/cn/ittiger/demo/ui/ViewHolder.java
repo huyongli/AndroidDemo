@@ -1,4 +1,4 @@
-package cn.ittiger.demo.base;
+package cn.ittiger.demo.ui;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

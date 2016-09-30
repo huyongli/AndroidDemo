@@ -1,8 +1,5 @@
 package cn.ittiger.demo;
 
-import cn.ittiger.demo.base.CommonRecyclerView;
-import cn.ittiger.demo.util.UIUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -28,8 +25,7 @@ public class MainActivity extends ListActivity {
         List<String> list = new ArrayList<>(10);
         list.add("Retrofit");
         list.add("RecyclerView");
-        list.add("VideoList");
-        list.add("VideoActivity");
+        list.add("RxJava");
         return list;
     }
 
@@ -43,11 +39,8 @@ public class MainActivity extends ListActivity {
             case 1://RecyclerView
                 startActivity(new Intent(this, RecyclerViewActivity.class));
                 break;
-            case 2://VideoList
-                startActivity(new Intent(this, VideoListActivity.class));
-                break;
-            case 3://VideoList
-                startActivity(new Intent(this, VideoActivity.class));
+            case 2://RxJava
+                startActivity(new Intent(this, RxJavaActivity.class));
                 break;
         }
     }

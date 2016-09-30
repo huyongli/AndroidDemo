@@ -1,9 +1,10 @@
 package cn.ittiger.demo;
 
 import cn.ittiger.demo.adapter.StringListAdapter;
-import cn.ittiger.demo.base.CommonRecyclerView;
+import cn.ittiger.demo.ui.CommonRecyclerView;
 import cn.ittiger.demo.decoration.SpacesItemDecoration;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -17,11 +18,13 @@ public abstract class ListActivity extends AppCompatActivity implements CommonRe
     protected StringListAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
     protected LinearLayout mContainer;
+    protected Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        mContext = this;
         setContentView(R.layout.activity_list);
         mRecyclerView = (CommonRecyclerView) findViewById(R.id.recyclerView);
 

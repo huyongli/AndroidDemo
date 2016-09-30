@@ -1,8 +1,8 @@
 package cn.ittiger.demo.adapter;
 
 import cn.ittiger.demo.R;
-import cn.ittiger.demo.base.HeaderAndFooterAdapter;
-import cn.ittiger.demo.base.ViewHolder;
+import cn.ittiger.demo.ui.HeaderAndFooterAdapter;
+import cn.ittiger.demo.ui.ViewHolder;
 
 import android.content.Context;
 import android.view.LayoutInflater;

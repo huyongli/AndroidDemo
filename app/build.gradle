@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+//butterknife
+apply plugin: 'android-apt'
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -23,10 +26,23 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
+
+    //retrofit
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
     compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+
+    //UIL
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    compile 'com.github.danylovolokh:video-player-manager:0.2.0'
+
     compile 'org.greenrobot:eventbus:3.0.0'
+
+    //rxjava
+    compile 'io.reactivex:rxjava:1.0.1'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
 }

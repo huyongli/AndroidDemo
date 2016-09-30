@@ -1,6 +1,6 @@
 package cn.ittiger.demo;
 
-import cn.ittiger.demo.base.CommonRecyclerView;
+import cn.ittiger.demo.ui.CommonRecyclerView;
 import cn.ittiger.demo.util.UIUtil;
 
 import android.os.Bundle;
