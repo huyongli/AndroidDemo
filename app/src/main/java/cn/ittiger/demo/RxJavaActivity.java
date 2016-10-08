@@ -4,8 +4,10 @@ import cn.ittiger.demo.bean.User;
 import cn.ittiger.demo.util.UIUtil;
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 import android.view.View;
 
@@ -27,6 +29,8 @@ public class RxJavaActivity extends ListActivity {
         list.add("接收集合事件");
         list.add("复杂变换flatmap");
         list.add("事件数据过滤filter");
+        list.add("切换到子线程执行");
+        list.add("切换到UI线程");
         return list;
     }
 
@@ -34,23 +38,29 @@ public class RxJavaActivity extends ListActivity {
     public void onItemClick(int position, View itemView) {
 
         switch (position) {
-            case 0:
+            case 0://最基本方式创建Observable和Subscriber
                 observableSubscribe();
                 break;
-            case 1:
+            case 1://简化创建方式
                 simpleObservableSubscriber();
                 break;
-            case 2:
+            case 2://简单事件变换map
                 simpleChangeEvent();
                 break;
-            case 3:
+            case 3://接收集合事件
                 observableFrom();
                 break;
-            case 4:
+            case 4://复杂变换flatmap
                 flatmapSmaple();
                 break;
-            case 5:
+            case 5://事件数据过滤filter
                 filterEvent();
+                break;
+            case 6://切换到子线程执行
+                newTheadRun();
+                break;
+            case 7://切换到UI线程执行
+                uiThreadRun();
                 break;
         }
     }
@@ -211,6 +221,38 @@ public class RxJavaActivity extends ListActivity {
                     public void call(User user) {
 
                         UIUtil.showToast(mContext, user.getName());
+                    }
+                });
+    }
+
+    void newTheadRun() {
+
+        UIUtil.showToast(mContext, Thread.currentThread().toString());
+        Observable.just("new thread run")
+                .subscribeOn(Schedulers.io())//在子线程中执行操作
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(final String s) {
+
+                        String toast = Thread.currentThread().toString() + "," + s;
+                        //此时会出现异常，无法执行UI操作
+                        UIUtil.showToast(mContext, toast);
+                    }
+                });
+    }
+
+    void uiThreadRun() {
+
+        UIUtil.showToast(mContext, Thread.currentThread().toString());
+        Observable.just("new thread run")
+                .subscribeOn(Schedulers.io())//在子线程中执行操作
+                .observeOn(AndroidSchedulers.mainThread())//在UI线程中更新结果
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(final String s) {
+
+                        String toast = Thread.currentThread().toString() + "," + s;
+                        UIUtil.showToast(mContext, toast);
                     }
                 });
     }
