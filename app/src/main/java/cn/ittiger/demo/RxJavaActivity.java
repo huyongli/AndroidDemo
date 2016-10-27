@@ -73,7 +73,7 @@ public class RxJavaActivity extends ListActivity {
             public void call(Subscriber<? super String> subscriber) {
 
                 subscriber.onNext("Observable subscribe Subscriber");
-                subscriber.onCompleted();
+//                subscriber.onCompleted();
             }
         });
 

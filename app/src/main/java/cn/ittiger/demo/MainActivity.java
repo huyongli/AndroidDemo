@@ -29,6 +29,7 @@ public class MainActivity extends ListActivity {
         list.add("Retrofit");
         list.add("RecyclerView");
         list.add("RxJava");
+        list.add("ViewDrawCache");
         return list;
     }
 
@@ -44,6 +45,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 2://RxJava
                 startActivity(new Intent(this, RxJavaActivity.class));
+                break;
+            case 3:
+                startActivity(new Intent(this, ViewDrawCacheActivity.class));
                 break;
         }
     }
