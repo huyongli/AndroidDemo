@@ -30,6 +30,7 @@ public class MainActivity extends ListActivity {
         list.add("RecyclerView");
         list.add("RxJava");
         list.add("ViewDrawCache");
+        list.add("9.Png");
         return list;
     }
 
@@ -48,6 +49,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 3:
                 startActivity(new Intent(this, ViewDrawCacheActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(this, Png9Activity.class));
                 break;
         }
     }

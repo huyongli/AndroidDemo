@@ -54,6 +54,8 @@
 
         <activity android:name=".ViewDrawCacheActivity">
         </activity>
+        <activity android:name=".Png9Activity">
+        </activity>
     </application>
 
 </manifest>
