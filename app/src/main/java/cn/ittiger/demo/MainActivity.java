@@ -1,5 +1,6 @@
 package cn.ittiger.demo;
 
+import cn.ittiger.demo.service.LocalService;
 import cn.ittiger.demo.service.RemoteService;
 
 import android.content.Intent;
@@ -21,6 +22,7 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setTitle("Demo");
         startService(new Intent(this, RemoteService.class));
+        startService(new Intent(this, LocalService.class));
     }
 
     public List<String> getData() {

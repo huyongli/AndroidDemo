@@ -33,10 +33,11 @@
         </activity>
         <activity android:name=".RxJavaActivity">
         </activity>
-
-        <!--<service
-            android:name=".service.RemoteService"
-            android:process=":remoteService">
+        <service android:name=".service.RemoteService"
+            android:process=":remote">
+        </service>
+        <service android:name=".service.LocalService"
+                 android:process=":localService">
         </service>
 
         <receiver android:name=".service.ServiceReceiver">
@@ -50,7 +51,7 @@
         </receiver>
         <receiver
             android:name=".service.AlarmReceiver"
-            android:process=":remote"/>-->
+            android:process=":remote"/>
 
         <activity android:name=".ViewDrawCacheActivity">
         </activity>
