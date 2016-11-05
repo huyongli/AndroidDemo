@@ -38,6 +38,6 @@ public class Png9View extends FrameLayout {
         mContainer = (LinearLayout) findViewById(R.id.root);
 
         setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
-        mContainer.setBackgroundResource(R.drawable.rect);
+        mContainer.setBackgroundResource(R.drawable.bg);
     }
 }
