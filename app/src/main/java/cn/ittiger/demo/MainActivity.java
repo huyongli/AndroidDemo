@@ -21,8 +21,8 @@ public class MainActivity extends ListActivity {
 
         super.onCreate(savedInstanceState);
         setTitle("Demo");
-        startService(new Intent(this, RemoteService.class));
-        startService(new Intent(this, LocalService.class));
+//        startService(new Intent(this, RemoteService.class));
+//        startService(new Intent(this, LocalService.class));
     }
 
     public List<String> getData() {
@@ -33,6 +33,7 @@ public class MainActivity extends ListActivity {
         list.add("RxJava");
         list.add("ViewDrawCache");
         list.add("9.Png");
+        list.add("StyleTextView");
         return list;
     }
 
@@ -54,6 +55,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 4:
                 startActivity(new Intent(this, Png9Activity.class));
+                break;
+            case 5:
+                startActivity(new Intent(this, StyleTextViewActivity.class));
                 break;
         }
     }
