@@ -47,7 +47,7 @@ public class StyleTextViewActivity extends AppCompatActivity {
         start = builder.length();
         builder.append("URL连接");
         end = builder.length();
-        builder.setSpan(new URLSpan("tel:4155551212") {
+        builder.setSpan(new URLSpan("www.baidu.com") {
             @Override
             public void onClick(View widget) {
 
