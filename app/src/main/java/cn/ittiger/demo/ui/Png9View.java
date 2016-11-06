@@ -3,6 +3,7 @@ package cn.ittiger.demo.ui;
 import cn.ittiger.demo.R;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -39,5 +40,6 @@ public class Png9View extends FrameLayout {
 
         setBackgroundColor(getResources().getColor(android.R.color.darker_gray));
         mContainer.setBackgroundResource(R.drawable.bg);
+//        Drawable.createFromResourceStream(context, null, inStream, null);
     }
 }
