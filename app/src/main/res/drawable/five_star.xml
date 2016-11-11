@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/d_50"
+    android:height="@dimen/d_50"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0"
+    android:autoMirrored="true">
+    <group
+        >
+        <!--<path
+            android:strokeColor="@android:color/black"
+            android:strokeWidth="0.2"
+            android:pathData="M12,0 L19.05,21.71z M12,0 L4.95,21.71z"/>-->
+        <path
+            android:name="five_star"
+            android:strokeColor="@android:color/black"
+            android:strokeWidth="0.3"
+            android:pathData="M12,0 L19.05,21.71 L0.59,8.29 L23.41,8.29 L4.95,21.71 L12,0 A12,12,0,0,1,19.05,21.71 A12,12,0,1,1,12,0z"/>
+
+        <!--
+        弧线绘制方法说明：
+        A (A rx,ry,xRotation,flag1,flag2,x,y)
+        rx:弧的X方向的半径
+        ry:弧的Y方向的半径
+        xRotation:画弧时x轴的旋转角度
+        flag1:弧画完之后是展示大弧还是展示小弧,1:大弧,0:小弧
+        flag2:顺时针还是逆时针,1:顺时针,0:逆时针
+        x:修改起始点在椭圆中的横轴位置,也就是弧的终点x坐标
+        y:修改起始点在椭圆中的纵轴位置,也就是弧的终点y坐标
+
+
+        -->
+    </group>
+
+    <!--
+    <path
+        android:name="lin5"
+        android:strokeColor="@android:color/black"
+        android:strokeWidth="0.2"
+        android:pathData="M12,0 L19.05,21.71 L0.59,8.29 L23.41,8.29 L4.95,21.71 L12,0z"/>
+    -->
+</vector>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:repeatMode="restart">
+    <objectAnimator
+        android:propertyName="rotation"
+        android:valueType="floatType"
+        android:valueFrom="0"
+        android:valueTo="72"
+        android:duration="500">
+    </objectAnimator>
+    <objectAnimator
+        android:propertyName="rotation"
+        android:valueType="floatType"
+        android:valueFrom="72"
+        android:valueTo="144"
+        android:duration="500"/>
+</set>

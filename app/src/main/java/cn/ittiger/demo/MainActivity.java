@@ -1,8 +1,5 @@
 package cn.ittiger.demo;
 
-import cn.ittiger.demo.service.LocalService;
-import cn.ittiger.demo.service.RemoteService;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +31,7 @@ public class MainActivity extends ListActivity {
         list.add("ViewDrawCache");
         list.add("9.Png");
         list.add("StyleTextView");
+        list.add("VectorDrawable");
         return list;
     }
 
@@ -58,6 +56,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 5:
                 startActivity(new Intent(this, StyleTextViewActivity.class));
+                break;
+            case 6:
+                startActivity(new Intent(this, VectorDrawableActivity.class));
                 break;
         }
     }
