@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:propertyName="pathData"
+    android:valueType="pathType"
+    android:valueFrom="M35,0 A10,10,0,0,1,45,10 A10,10,0,1,1,35,0z"
+    android:valueTo="M30,5 A5,5,0,0,1,35,10 A5,5,0,1,1,30,5z"
+    android:duration="500"
+    android:repeatMode="reverse"
+    android:repeatCount="infinite"/>
+
+<!-- pathData变换只在5.0以上才有效 -->

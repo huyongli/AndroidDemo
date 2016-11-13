@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="100.0"
+    android:viewportHeight="100.0">
+
+    <path
+        android:strokeWidth="5"
+        android:strokeColor="@android:color/black"
+        android:pathData="M50,5 A45,45,0,0,1,95,50 A45,45,0,1,1,50,5z"/>
+0
+    <!-- 左眼 -->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M30,30 A5,5,0,0,1,37,37 A5,5,0,1,1,30,30z"/>
+
+    <!-- 右眼 -->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M70,30 A5,5,0,0,1,63,37 A5,5,0,1,1,70,30z"/>
+
+    <!-- 嘴 -->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M70,60 A22.4,22.4,0,0,1,30,60z"/>
+</vector>

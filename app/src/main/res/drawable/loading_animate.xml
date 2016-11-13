@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/loading">
+    <target
+        android:animation="@animator/animator_loading_left_circle"
+        android:name="left_circle"/>
+    <target
+        android:animation="@animator/animator_loading_right_circle"
+        android:name="right_circle"/>
+</animated-vector>

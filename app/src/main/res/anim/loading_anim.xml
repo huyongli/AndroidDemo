@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:repeatMode="reverse">
+    <objectAnimator
+        android:propertyName="pathData"
+        android:valueType="pathType"
+        android:valueFrom="M10,5 A5,5,0,0,1,15,10 A5,5,0,1,1,10,5z"
+        android:valueTo="M10,0 A10,10,0,0,1,20,10 A10,10,0,1,1,10,0z"
+        android:duration="500">
+    </objectAnimator>
+    <objectAnimator
+        android:propertyName="pathData"
+        android:valueType="pathType"
+        android:valueFrom="M35,0 A10,10,0,0,1,45,10 A10,10,0,1,1,35,0z"
+        android:valueTo="M30,5 A5,5,0,0,1,35,10 A5,5,0,1,1,30,5z"
+        android:duration="500"/>
+</set>

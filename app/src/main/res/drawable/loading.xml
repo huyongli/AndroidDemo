@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="45dp"
+    android:height="20dp"
+    android:viewportWidth="45.0"
+    android:viewportHeight="20.0"
+    android:autoMirrored="true">
+    <path
+        android:name="left_circle"
+        android:fillColor="@android:color/holo_blue_light"
+        android:pathData="M10,5 A5,5,0,0,1,15,10 A5,5,0,1,1,10,5z"/>
+    <path
+        android:name="right_circle"
+        android:fillColor="@android:color/holo_red_light"
+        android:pathData="M35,0 A10,10,0,0,1,45,10 A10,10,0,1,1,35,0z"/>
+</vector>
