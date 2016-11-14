@@ -27,6 +27,7 @@
             android:id="@+id/starImageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            app:srcCompat="@drawable/five_star"
             android:layout_marginTop="@dimen/d_30"/>
 
         <Button
