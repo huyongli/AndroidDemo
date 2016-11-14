@@ -1,5 +1,9 @@
 package cn.ittiger.demo;
 
+import cn.ittiger.demo.util.UIUtil;
+
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.os.Build;
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,12 +41,15 @@ public class VectorDrawableActivity extends AppCompatActivity {
             starDrawable.start();
         }
 
-        ImageView load = (ImageView) findViewById(R.id.loadingImageView);
-//        AnimatedVectorDrawable loadDrawable = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.loading_animate);
-        AnimatedVectorDrawableCompat loadDrawable = AnimatedVectorDrawableCompat.create(this, R.drawable.loading_animate);
-        load.setImageDrawable(loadDrawable);
-        if (loadDrawable != null) {
-            loadDrawable.start();
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP ) {
+            ImageView load = (ImageView) findViewById(R.id.loadingImageView);
+            AnimatedVectorDrawable loadDrawable = (AnimatedVectorDrawable) getResources().getDrawable(R.drawable.loading_animate);
+            load.setImageDrawable(loadDrawable);
+            if (loadDrawable != null) {
+                loadDrawable.start();
+            }
+        } else {
+            UIUtil.showToast(this, "5.0以下不支持Path Morph动画");
         }
     }
 }
