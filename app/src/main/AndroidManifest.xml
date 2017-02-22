@@ -66,6 +66,8 @@
         </activity>
         <activity android:name=".VectorDrawableActivity">
         </activity>
+        <activity android:name=".behavior.BehaviorActivity"/>
+        <activity android:name=".behavior.BackTopBehaviorActivity"/>
     </application>
 
 </manifest>

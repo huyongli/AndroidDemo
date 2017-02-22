@@ -1,5 +1,7 @@
 package cn.ittiger.demo;
 
+import cn.ittiger.demo.behavior.BehaviorActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +34,7 @@ public class MainActivity extends ListActivity {
         list.add("9.Png");
         list.add("StyleTextView");
         list.add("VectorDrawable");
+        list.add("Behavior");
         return list;
     }
 
@@ -59,6 +62,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 6:
                 startActivity(new Intent(this, VectorDrawableActivity.class));
+                break;
+            case 7:
+                startActivity(new Intent(this, BehaviorActivity.class));
                 break;
         }
     }
