@@ -18,6 +18,7 @@ public class BehaviorActivity extends ListActivity {
 
         List<String> list = new ArrayList<>(10);
         list.add("滑动显示返回顶部按钮");
+        list.add("UC主页效果");
         return list;
     }
 
@@ -27,6 +28,9 @@ public class BehaviorActivity extends ListActivity {
         switch (position) {
             case 0:
                 startActivity(new Intent(this, BackTopBehaviorActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(this, UCMainViewActivity.class));
                 break;
         }
     }

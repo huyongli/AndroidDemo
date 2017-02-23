@@ -68,6 +68,7 @@
         </activity>
         <activity android:name=".behavior.BehaviorActivity"/>
         <activity android:name=".behavior.BackTopBehaviorActivity"/>
+        <activity android:name=".behavior.UCMainViewActivity"/>
     </application>
 
 </manifest>

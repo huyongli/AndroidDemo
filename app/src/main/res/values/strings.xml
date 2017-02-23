@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidDemo</string>
+
+    <string name="behavior_ucview_content">cn.ittiger.demo.behavior.uc.UCViewContentBehavior</string>
+    <string name="behavior_ucview_tab">cn.ittiger.demo.behavior.uc.UCViewTabBehavior</string>
+    <string name="behavior_ucview_title">cn.ittiger.demo.behavior.uc.UCViewTitleBehavior</string>
+    <string name="behavior_ucview_header">cn.ittiger.demo.behavior.uc.UCViewHeaderBehavior</string>
 </resources>
