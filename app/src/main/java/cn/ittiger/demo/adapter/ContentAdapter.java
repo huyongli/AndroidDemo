@@ -1,4 +1,4 @@
-package cn.ittiger.demo.behavior.adapter;
+package cn.ittiger.demo.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

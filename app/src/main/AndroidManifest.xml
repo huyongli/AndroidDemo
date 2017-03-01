@@ -69,6 +69,7 @@
         <activity android:name=".behavior.BehaviorActivity"/>
         <activity android:name=".behavior.BackTopBehaviorActivity"/>
         <activity android:name=".behavior.UCMainViewActivity"/>
+        <activity android:name=".nestedscroll.StickyNavigationActivity"/>
     </application>
 
 </manifest>

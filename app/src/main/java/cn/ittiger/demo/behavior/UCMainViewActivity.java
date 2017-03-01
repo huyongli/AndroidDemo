@@ -2,8 +2,8 @@ package cn.ittiger.demo.behavior;
 
 
 import cn.ittiger.demo.R;
-import cn.ittiger.demo.behavior.adapter.ContentFragmentAdapter;
-import cn.ittiger.demo.behavior.fragment.ContentFragment;
+import cn.ittiger.demo.adapter.ContentFragmentAdapter;
+import cn.ittiger.demo.fragment.ContentFragment;
 import cn.ittiger.demo.behavior.uc.UCViewHeaderBehavior;
 
 import android.os.Bundle;

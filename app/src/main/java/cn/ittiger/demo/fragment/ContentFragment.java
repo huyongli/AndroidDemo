@@ -1,8 +1,8 @@
-package cn.ittiger.demo.behavior.fragment;
+package cn.ittiger.demo.fragment;
 
 
 import cn.ittiger.demo.R;
-import cn.ittiger.demo.behavior.adapter.ContentAdapter;
+import cn.ittiger.demo.adapter.ContentAdapter;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -59,7 +59,7 @@ public class ContentFragment extends Fragment {
 
         List<String> list = new ArrayList<>();
         for(int i = 0; i < 30; i++) {
-            list.add("Fragment " + mFragmentIndex + ", 第" + i + "条数据");
+            list.add("Fragment " + mFragmentIndex + ", 第" + (i + 1) + "条数据");
         }
 
         mAdapter = new ContentAdapter(getContext(), list);

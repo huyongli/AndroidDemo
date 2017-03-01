@@ -1,7 +1,7 @@
-package cn.ittiger.demo.behavior.adapter;
+package cn.ittiger.demo.adapter;
 
 
-import cn.ittiger.demo.behavior.fragment.ContentFragment;
+import cn.ittiger.demo.fragment.ContentFragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
