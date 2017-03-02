@@ -1,7 +1,6 @@
 package cn.ittiger.demo;
 
 import cn.ittiger.demo.behavior.BehaviorActivity;
-import cn.ittiger.demo.nestedscroll.StickyNavigationActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,7 +35,6 @@ public class MainActivity extends ListActivity {
         list.add("StyleTextView");
         list.add("VectorDrawable");
         list.add("Behavior");
-        list.add("NestedScroll");
         return list;
     }
 
@@ -67,9 +65,6 @@ public class MainActivity extends ListActivity {
                 break;
             case 7:
                 startActivity(new Intent(this, BehaviorActivity.class));
-                break;
-            case 8:
-                startActivity(new Intent(this, StickyNavigationActivity.class));
                 break;
         }
     }
