@@ -21,7 +21,9 @@ Demo介绍了Retrofit的常规使用方式，如：
 
 ### 9-patch图应用中的一些注意事项
 
-### 根据View生成该View的图片
+### 根据View生成该View的图片(截屏)
+
+### 使用MediaProjection进行截屏
 
 ### Vector Drawable矢量图的适配使用
 

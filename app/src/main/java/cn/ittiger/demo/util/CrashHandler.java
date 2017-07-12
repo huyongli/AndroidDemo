@@ -1,5 +1,14 @@
 package cn.ittiger.demo.util;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
+import android.os.Looper;
+import android.util.Log;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -10,15 +19,6 @@ import java.lang.reflect.Field;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.os.Build;
-import android.os.Looper;
-import android.util.Log;
-import android.widget.Toast;
 
 public class CrashHandler implements UncaughtExceptionHandler {
     private static final String VERSION_NAME = "versionName = ";
@@ -55,7 +55,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
     public void init(Context ctx) {
 
         mContext = ctx;
-        this.mLogPath = ctx.getCacheDir().getAbsolutePath() + "/crash";
+        this.mLogPath = ctx.getExternalCacheDir().getAbsolutePath() + "/crash";
         mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
     }
@@ -96,7 +96,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
         sb.append(result);
         try {
             String time = formatter.format(new Date());
-            String logFile = logdir + File.separator + time + ".log";
+            String logFile = logdir + File.separator + time + ".txt";
 
             FileOutputStream fos = new FileOutputStream(logFile);
             fos.write(sb.toString().getBytes());

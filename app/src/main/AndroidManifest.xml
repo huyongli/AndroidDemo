@@ -70,6 +70,7 @@
         <activity android:name=".behavior.BackTopBehaviorActivity"/>
         <activity android:name=".behavior.UCMainViewActivity"/>
         <activity android:name=".activity.TextSwitcherActivity"/>
+        <activity android:name=".activity.ScreenCaptureActivity"/>
     </application>
 
 </manifest>

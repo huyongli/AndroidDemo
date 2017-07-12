@@ -36,6 +36,7 @@ public class MainActivity extends ListActivity {
         list.add("VectorDrawable");
         list.add("Behavior");
         list.add("TextSwitcher");
+        list.add("MediaProjection Capture");
         return list;
     }
 
@@ -69,6 +70,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 8:
                 startActivity(new Intent(this, TextSwitcherActivity.class));
+                break;
+            case 9:
+                startActivity(new Intent(this, ScreenCaptureActivity.class));
                 break;
         }
     }
