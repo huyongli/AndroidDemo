@@ -20,18 +20,18 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RetrofitActivity">
+        <activity android:name=".activity.RetrofitActivity">
         </activity>
-        <activity android:name=".RecyclerViewActivity">
+        <activity android:name=".activity.RecyclerViewActivity">
         </activity>
-        <activity android:name=".RxJavaActivity">
+        <activity android:name=".activity.RxJavaActivity">
         </activity>
 
         <!--
@@ -58,17 +58,18 @@
             android:name=".service.AlarmReceiver"
             android:process=":remote"/>
 
-        <activity android:name=".ViewDrawCacheActivity">
+        <activity android:name=".activity.ViewDrawCacheActivity">
         </activity>
-        <activity android:name=".Png9Activity">
+        <activity android:name=".activity.Png9Activity">
         </activity>
-        <activity android:name=".StyleTextViewActivity">
+        <activity android:name=".activity.StyleTextViewActivity">
         </activity>
-        <activity android:name=".VectorDrawableActivity">
+        <activity android:name=".activity.VectorDrawableActivity">
         </activity>
         <activity android:name=".behavior.BehaviorActivity"/>
         <activity android:name=".behavior.BackTopBehaviorActivity"/>
         <activity android:name=".behavior.UCMainViewActivity"/>
+        <activity android:name=".activity.TextSwitcherActivity"/>
     </application>
 
 </manifest>

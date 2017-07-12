@@ -1,6 +1,6 @@
 package cn.ittiger.demo.behavior;
 
-import cn.ittiger.demo.ListActivity;
+import cn.ittiger.demo.activity.ListActivity;
 
 import android.content.Intent;
 import android.view.View;

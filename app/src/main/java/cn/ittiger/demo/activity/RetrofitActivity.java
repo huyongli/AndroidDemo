@@ -1,5 +1,6 @@
-package cn.ittiger.demo;
+package cn.ittiger.demo.activity;
 
+import cn.ittiger.demo.R;
 import cn.ittiger.demo.retrofit.RetrofitManager;
 import cn.ittiger.demo.util.ImageLoaderManager;
 

@@ -1,5 +1,6 @@
-package cn.ittiger.demo;
+package cn.ittiger.demo.activity;
 
+import cn.ittiger.demo.R;
 import cn.ittiger.demo.ui.CommonRecyclerView;
 import cn.ittiger.demo.util.UIUtil;
 

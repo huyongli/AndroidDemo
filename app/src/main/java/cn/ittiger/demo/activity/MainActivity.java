@@ -1,6 +1,4 @@
-package cn.ittiger.demo;
-
-import cn.ittiger.demo.behavior.BehaviorActivity;
+package cn.ittiger.demo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +6,8 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.ittiger.demo.behavior.BehaviorActivity;
 
 /**
  * @author: laohu on 2016/7/23
@@ -35,6 +35,7 @@ public class MainActivity extends ListActivity {
         list.add("StyleTextView");
         list.add("VectorDrawable");
         list.add("Behavior");
+        list.add("TextSwitcher");
         return list;
     }
 
@@ -65,6 +66,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 7:
                 startActivity(new Intent(this, BehaviorActivity.class));
+                break;
+            case 8:
+                startActivity(new Intent(this, TextSwitcherActivity.class));
                 break;
         }
     }

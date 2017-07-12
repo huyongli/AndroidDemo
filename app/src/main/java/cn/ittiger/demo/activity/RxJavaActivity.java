@@ -1,4 +1,4 @@
-package cn.ittiger.demo;
+package cn.ittiger.demo.activity;
 
 import cn.ittiger.demo.bean.User;
 import cn.ittiger.demo.util.UIUtil;

@@ -1,17 +1,18 @@
-package cn.ittiger.demo;
-
-import cn.ittiger.demo.adapter.StringListAdapter;
-import cn.ittiger.demo.ui.CommonRecyclerView;
-import cn.ittiger.demo.decoration.SpacesItemDecoration;
+package cn.ittiger.demo.activity;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.widget.LinearLayout;
 
 import java.util.List;
+
+import cn.ittiger.demo.R;
+import cn.ittiger.demo.adapter.StringListAdapter;
+import cn.ittiger.demo.decoration.SpacesItemDecoration;
+import cn.ittiger.demo.ui.CommonRecyclerView;
 
 public abstract class ListActivity extends AppCompatActivity implements CommonRecyclerView.OnItemClickListener {
     protected CommonRecyclerView mRecyclerView;

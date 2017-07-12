@@ -1,14 +1,10 @@
-package cn.ittiger.demo;
-
-import cn.ittiger.demo.util.Util;
+package cn.ittiger.demo.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +14,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import cn.ittiger.demo.R;
+import cn.ittiger.demo.util.Util;
 
 public class ViewDrawCacheActivity extends AppCompatActivity {
 

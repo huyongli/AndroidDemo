@@ -1,17 +1,14 @@
-package cn.ittiger.demo;
-
-import cn.ittiger.demo.util.UIUtil;
+package cn.ittiger.demo.activity;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
-import android.text.method.MovementMethod;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -22,6 +19,9 @@ import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.TextView;
+
+import cn.ittiger.demo.R;
+import cn.ittiger.demo.util.UIUtil;
 
 public class StyleTextViewActivity extends AppCompatActivity {
     TextView mTextView;
