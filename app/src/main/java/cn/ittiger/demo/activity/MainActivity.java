@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import cn.ittiger.demo.behavior.BehaviorActivity;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import cn.ittiger.demo.behavior.BehaviorActivity;
 
 /**
  * @author: laohu on 2016/7/23
@@ -37,6 +37,9 @@ public class MainActivity extends ListActivity {
         list.add("Behavior");
         list.add("TextSwitcher");
         list.add("MediaProjection Capture");
+        list.add("Handler");
+        list.add("Window");
+        list.add("FloatingActionButton");
         return list;
     }
 
@@ -73,6 +76,15 @@ public class MainActivity extends ListActivity {
                 break;
             case 9:
                 startActivity(new Intent(this, ScreenCaptureActivity.class));
+                break;
+            case 10:
+                startActivity(new Intent(this, HandlerActivity.class));
+                break;
+            case 11:
+                startActivity(new Intent(this, WindowActivity.class));
+                break;
+            case 12:
+                startActivity(new Intent(this, FloatingActionButtonActivity.class));
                 break;
         }
     }
