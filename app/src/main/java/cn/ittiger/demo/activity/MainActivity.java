@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import cn.ittiger.demo.behavior.BehaviorActivity;
+import cn.ittiger.demo.service.MyIntentService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,7 @@ public class MainActivity extends ListActivity {
         setTitle("Demo");
 //        startService(new Intent(this, RemoteService.class));
 //        startService(new Intent(this, LocalService.class));
+        startService(new Intent(this, MyIntentService.class));
     }
 
     public List<String> getData() {
@@ -40,6 +42,8 @@ public class MainActivity extends ListActivity {
         list.add("Handler");
         list.add("Window");
         list.add("FloatingActionButton");
+        list.add("IntentService");
+        list.add("GridRecyclerToInRecyclerViewActivity");
         return list;
     }
 
@@ -85,6 +89,12 @@ public class MainActivity extends ListActivity {
                 break;
             case 12:
                 startActivity(new Intent(this, FloatingActionButtonActivity.class));
+                break;
+            case 13://IntentService
+                startActivity(new Intent(this, IntentServiceActivity.class));
+                break;
+            case 14://GridRecyclerToInRecyclerViewActivity
+                startActivity(new Intent(this, GridRecyclerToInRecyclerViewActivity.class));
                 break;
         }
     }

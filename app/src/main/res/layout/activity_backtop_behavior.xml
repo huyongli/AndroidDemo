@@ -31,7 +31,6 @@
         android:layout_margin="@dimen/d_15"
         android:src="@android:drawable/stat_sys_upload_done"
         app:layout_behavior="cn.ittiger.demo.behavior.BackTopBehavior"
-        app:layout_scrollFlags="scroll|enterAlways|snap"
-        android:visibility="gone"/>
+        app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
 </android.support.design.widget.CoordinatorLayout>
