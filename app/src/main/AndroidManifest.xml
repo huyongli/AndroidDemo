@@ -58,6 +58,11 @@
         <receiver
             android:name=".service.AlarmReceiver"
             android:process=":remote"/>
+        <!--<receiver android:name=".receiver.TestBroadcastReceiver">
+            <intent-filter>
+                <action android:name="cn.ittiger.demo.test.receiver"/>
+            </intent-filter>
+        </receiver>-->
 
         <activity android:name=".activity.ViewDrawCacheActivity">
         </activity>
@@ -82,6 +87,8 @@
         </activity>
 
         <service android:name=".service.MyIntentService"/>
+        <service android:name=".service.GrayService"/>
+        <service android:name=".service.GrayService$GrayInnerService"/>
 
         <activity
             android:name=".activity.GridRecyclerToInRecyclerViewActivity"

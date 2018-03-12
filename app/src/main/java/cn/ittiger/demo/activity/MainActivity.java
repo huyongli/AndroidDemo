@@ -1,10 +1,14 @@
 package cn.ittiger.demo.activity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 
 import cn.ittiger.demo.behavior.BehaviorActivity;
+import cn.ittiger.demo.receiver.TestBroadcastReceiver;
+import cn.ittiger.demo.service.GrayService;
 import cn.ittiger.demo.service.MyIntentService;
 
 import java.util.ArrayList;
@@ -23,7 +27,15 @@ public class MainActivity extends ListActivity {
         setTitle("Demo");
 //        startService(new Intent(this, RemoteService.class));
 //        startService(new Intent(this, LocalService.class));
-        startService(new Intent(this, MyIntentService.class));
+//        startService(new Intent(this, MyIntentService.class));
+
+        startService(new Intent(this, GrayService.class));
+
+        //测试广播在应用关闭后是否还生效
+        Intent intent = new Intent();
+        intent.setAction(TestBroadcastReceiver.ACTION);
+        intent.putExtra("data","from same app");
+        sendBroadcast(intent);
     }
 
     public List<String> getData() {
